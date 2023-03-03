@@ -1,0 +1,8 @@
+blackbox-exporter:
+      image: prom/blackbox-exporter
+      ports:
+        — 127.0.0.1:9115:9115
+      restart: always
+      volumes:
+        — ./blackbox:/config
+      command: --config.file=/config/blackbox.yml
